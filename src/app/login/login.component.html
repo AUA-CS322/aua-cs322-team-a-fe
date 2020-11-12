@@ -1,0 +1,22 @@
+<div class="container full-container text-center" >
+  <!-- Default form login -->
+  <img src="assets/images/aua-logo.png" class="mb-5" alt="">
+
+  <form [formGroup]="signForm" class="text-center p-5 form-container m-auto" (submit)="submit($event)">
+
+    <input formControlName="username" name="username" type="text" class="form-control mb-4 border border-dark border-radius-0" placeholder="Username">
+
+    <input formControlName="password" name="password" type="password" id="defaultLoginFormPassword" class="form-control mb-5 border border-dark border-radius-0" placeholder="Password">
+
+
+    <div class="form-row mb-4">
+      <div class="col-lg-8">
+      </div>
+      <div class="col-lg-4">
+        <button class="btn border border-dark btn-block login border-radius-0"  [disabled]="signForm.invalid" type="submit">Login</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
