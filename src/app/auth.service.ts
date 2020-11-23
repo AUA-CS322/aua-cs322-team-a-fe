@@ -21,20 +21,6 @@ export class AuthService {
 
   public login(username, password) : Observable<Object>{
     
-    // this.http.post(`${environment.apiUrl}users/signin`, {
-    //   name: username,
-    //   password
-    // }, {...this.options}).subscribe((data: any) => {
-    //   if (data.body) {
-    //     localStorage.setItem('token', data.body);
-    //     this.router.navigate(['/profile']);
-    //   } else{
-        
-    //     console.log(data.statusCode);
-    //   }
-    // }, (e) => {
-    //   console.log(e);
-    // });
     return this.http.post(`${environment.apiUrl}users/signin`, {
       name: username,
       password
