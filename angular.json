@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SoftwareEngineering"
+    }
+  },
+  "defaultProject": "SoftwareEngineering",
+  "cli": {
+    "analytics": false
+  }
 }
