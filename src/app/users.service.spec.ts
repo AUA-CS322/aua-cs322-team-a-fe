@@ -1,17 +1,15 @@
 import {TestBed} from '@angular/core/testing';
-
-import {AuthService} from './auth.service';
+import {UsersService} from './users.service';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from './app-routing.module';
 
-describe('AuthService', () => {
-  let service: AuthService;
+describe('UsersService', () => {
+  let service: UsersService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, AppRoutingModule]
+      imports: [HttpClientModule]
     });
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(UsersService);
   });
 
   it('should be created', () => {
