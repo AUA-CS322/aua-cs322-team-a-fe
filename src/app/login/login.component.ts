@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {throwError} from 'rxjs';
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   public submit(e) {
-    e.preventDefault();
+    e?.preventDefault();
     this.isSubmitted = true;
     this.authService.login(this.signForm.getRawValue().username, this.signForm.getRawValue().password)
       .subscribe(
@@ -39,10 +39,12 @@ export class LoginComponent implements OnInit {
           } else {
             console.log('error');
           }
+          this.wrongError.emit(this.isWrongError);
         },
         (error) => {
           this.isError = true;
           console.log(error);
+          this.wrongError.emit(this.isWrongError);
         }
       );
   }
@@ -55,4 +57,14 @@ export class LoginComponent implements OnInit {
   get isWrongError() {
     return this.isSubmitted && this.isError;
   }
+
+  public setFieldValues(usernameNew, passwordNew){
+    this.signForm.patchValue({
+      username:usernameNew,
+      password : passwordNew
+    }
+    );
+  }
+
+  @Output() wrongError = new EventEmitter<boolean>();
 }
