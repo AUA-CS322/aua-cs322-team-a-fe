@@ -17,4 +17,11 @@ describe('AuthService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('login should work', (done) => {
+    service.login('president', 'pass').subscribe((value: any) => {
+      expect(value.body).toBeTruthy();
+      done();
+    });
+  });
 });

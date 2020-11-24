@@ -10,10 +10,10 @@ describe('LoginComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      imports: [ ReactiveFormsModule, HttpClientModule, AppRoutingModule ]
+      declarations: [LoginComponent],
+      imports: [ReactiveFormsModule, HttpClientModule, AppRoutingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -38,38 +38,38 @@ describe('LoginComponent', () => {
 
   describe('when the form validation failed', () => {
     it('then both login fields are empty', () => {
-      component.setFieldValues('','');
+      component.setFieldValues('', '');
       expect(component.signForm.invalid).toBe(true);
     });
 
     it('then username field is empty', () => {
-      component.setFieldValues('','password');
+      component.setFieldValues('', 'password');
       expect(component.signForm.invalid).toBe(true);
     });
 
     it('then password field is empty', () => {
-      component.setFieldValues('username','');
+      component.setFieldValues('username', '');
       expect(component.signForm.invalid).toBe(true);
-    })
+    });
   });
 
   describe('when form validation succeeded', () => {
     it('then both fields are not empty', () => {
-      component.setFieldValues('username','password');
+      component.setFieldValues('username', 'password');
       expect(component.signForm.invalid).toBe(false);
-    })
+    });
   });
 
   describe('username and/or password is incorrect', () => {
     it('then an error message should be displayed', (done) => {
-      component.setFieldValues('username','password');
-   
-      component.wrongError.subscribe((b:boolean)=>{
-        expect(b).toBe(true)
+      component.setFieldValues('username', 'password');
+
+      component.wrongError.subscribe((b: boolean) => {
+        expect(b).toBe(true);
         done();
       });
 
       component.submit(undefined);
-    })
-  })
+    });
+  });
 });
