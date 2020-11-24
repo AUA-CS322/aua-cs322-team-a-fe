@@ -1,6 +1,5 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {TestBed, waitForAsync} from '@angular/core/testing';
+import {AppComponent} from './app.component';
 import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
@@ -9,7 +8,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports: [ RouterTestingModule ]
+      imports: [RouterTestingModule]
     }).compileComponents();
   }));
 

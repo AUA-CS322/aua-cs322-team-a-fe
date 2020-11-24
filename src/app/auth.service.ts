@@ -17,23 +17,17 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {
   }
-  
 
-  public login(username, password) : Observable<Object>{
-    
+
+  public login(username, password): Observable<object> {
     return this.http.post(`${environment.apiUrl}users/signin`, {
       name: username,
       password
     }, {...this.options}).pipe(
-      catchError(err=>{console.log(err); return throwError(err)}),
-      tap((data:any)=>{
-        if (data.body) {
-              localStorage.setItem('token', data.body);
-              this.router.navigate(['/profile']);
-            } else{
-              throwError(data.statusCode);
-            }
+      catchError(err => {
+        console.log(err);
+        return throwError(err);
       })
-    )
+    );
   }
 }

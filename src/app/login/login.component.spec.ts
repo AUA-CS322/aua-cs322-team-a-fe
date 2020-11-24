@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import {ReactiveFormsModule} from '@angular/forms';
-import { LoginComponent } from './login.component';
+import {LoginComponent} from './login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from '../app-routing.module';
 
@@ -24,5 +24,15 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('when the login page loads', () => {
+    it('then the login fields should be defaulted', () => {
+      expect(component.signForm.getRawValue().username).toEqual('');
+      expect(component.signForm.getRawValue().password).toEqual('');
+    });
+    it('then the error message should not be displayed', () => {
+      expect(component.isError).toBe(false);
+    });
   });
 });
