@@ -61,11 +61,12 @@ describe('LoginComponent', () => {
   });
 
   describe('username and/or password is incorrect', () => {
-    it('then an error message should be displayed', () => {
+    it('then an error message should be displayed', (done) => {
       component.setFieldValues('username','password');
    
       component.wrongError.subscribe((b:boolean)=>{
         expect(b).toBe(true)
+        done();
       });
 
       component.submit(undefined);
