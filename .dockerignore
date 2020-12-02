@@ -8,12 +8,7 @@ cypress.json
 
 cypress
 README.md
-src
 node_modules
 e2e
-.browserslistrc
-karma.conf.js
-tsconfig*
-tslint.json
-angular.json
 .editorconfig
+Dockerfile
