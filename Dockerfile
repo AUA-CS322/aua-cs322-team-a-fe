@@ -17,7 +17,7 @@ FROM nginx:alpine
 COPY --from=build /app/default.conf /etc/nginx/conf.d/configfile.template
 #COPY default.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app/dist/ /var/www
+COPY --from=build /app/dist/SoftwareEngineering /var/www
 #COPY build /var/www
 
 ENV PORT 8080
