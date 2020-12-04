@@ -10,7 +10,7 @@ RUN npm install -g @angular/cli
 COPY . /app/
 ARG REACT_APP_API_ROOT=https://team-b-server-ns2svqdtya-ew.a.run.app/
 RUN ng config -g cli.warnings.versionMismatch false
-RUN ng build
+RUN ng build --prod
 
 FROM nginx:alpine
 
