@@ -45,3 +45,7 @@
 .node:hover{
   background-color: lightsteelblue;
 }
+
+.searchResults{
+  z-index: 1;
+}

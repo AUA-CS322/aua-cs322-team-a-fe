@@ -1,0 +1,14 @@
+.vscode
+.git
+.gitignore
+policy
+cypress.json
+.env.*
+.eslintrc.js
+
+cypress
+README.md
+node_modules
+e2e
+.editorconfig
+Dockerfile

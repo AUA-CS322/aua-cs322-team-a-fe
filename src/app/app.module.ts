@@ -8,6 +8,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
 import {HeaderComponent} from './header/header.component';
 import {AuthInterceptor} from './auth.interceptor';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 import { TreeComponent } from './tree/tree.component';
 import {NgxTreantJsModule} from '@ahmed757/ngx-treant-js';
 
@@ -17,7 +18,9 @@ import {NgxTreantJsModule} from '@ahmed757/ngx-treant-js';
     LoginComponent,
     ProfileComponent,
     HeaderComponent,
-    TreeComponent
+    TreeComponent,
+    HeaderComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

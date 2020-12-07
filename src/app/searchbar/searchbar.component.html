@@ -1,0 +1,17 @@
+<form class="containerForm">
+    <input type="text" (keyup)="searchInput.next($event.target.value)" placeholder="Search" class="searchText" />
+    <div class="list-group searchResults" *ngIf="searchResults">
+        <a href="#" class="list-group-item list-group-item-action" *ngIf="isLoading">
+            Searching....
+        </a>
+        <a href="#" class="list-group-item list-group-item-action" *ngIf="isMinError">
+            Enter at least 3 letters
+        </a>
+        <a href="#" class="list-group-item list-group-item-action" *ngIf="noResults">
+            No results found...
+        </a>
+        <a href="/profile/{{result.username}}" class="list-group-item list-group-item-action" *ngFor="let result of searchResults | slice:0:7">
+            {{result.firstName}}, {{result.lastName}}, {{result.position}}, {{result.department}}, {{result.location}}
+        </a>
+    </div>
+</form>
