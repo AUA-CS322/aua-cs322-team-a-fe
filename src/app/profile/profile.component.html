@@ -1,1 +1,41 @@
 <app-header></app-header>
+<div *ngIf="isReady">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="row mt-5">
+          <img [src]="userData.photoUrl" alt = "User Photo">
+        </div>
+        <div class="row mb-3 mt-5">
+          <span><b>Name:&nbsp;</b></span>
+          <span>{{userData.firstName}} {{userData.lastName}}</span>
+        </div>
+        <div class="row mb-3">
+          <span><b>Position:&nbsp;</b></span>
+          <span>{{userData.position}}</span>
+        </div>
+        <div class="row mb-3">
+          <span><b>Department:&nbsp;</b></span>
+          <span>{{userData.department}}</span>
+        </div>
+        <div class="row mb-3" *ngIf="userData.manager">
+          <span><b>Manager:&nbsp;</b></span>
+          <span>{{userData.manager}}</span>
+        </div>
+        <div class="row mb-3">
+          <span><b>Location:&nbsp;</b></span>
+          <span>{{userData.location}}</span>
+        </div>
+        <div class="row mb-3">
+          <span><b>Email:&nbsp;</b></span>
+          <span>{{userData.email}}</span>
+        </div>
+        <div class="row">
+          <span><b>Phone:&nbsp;</b></span>
+          <span>{{userData.phone}}</span>
+        </div>
+      </div>
+      <div class="col-9"></div>
+    </div>
+  </div>
+</div>
