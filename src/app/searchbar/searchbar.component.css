@@ -1,0 +1,14 @@
+.containerForm {
+    position: relative;
+    width: 98%;
+    margin-right: 100px;
+}
+
+.searchText {
+    width: 100%;
+}
+
+.searchResults {
+    position: absolute;
+    width: 100%;
+}
