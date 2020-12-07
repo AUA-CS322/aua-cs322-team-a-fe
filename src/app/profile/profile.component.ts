@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {UsersService} from "../users.service";
+import {Component, NgZone, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,15 +11,16 @@ export class ProfileComponent implements OnInit {
 
   userData;
   isReady: boolean;
+  username: string;
   constructor(private route: ActivatedRoute, private usersService: UsersService) {
   }
 
   ngOnInit(): void {
-    this.isReady = false;
     this.route.paramMap.subscribe(paramMap => {
-      const username = paramMap.get('username');
-      if (username){
-        this.usersService.getUserById(username).subscribe((data: any) => {
+      this.isReady = false;
+      this.username = paramMap.get('username');
+      if (this.username){
+        this.usersService.getUserById(this.username).subscribe((data: any) => {
           this.userData = data;
           this.isReady = true;
         });
@@ -31,5 +32,4 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
-
 }

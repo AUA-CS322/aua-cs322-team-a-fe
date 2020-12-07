@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.signForm.getRawValue().username, this.signForm.getRawValue().password)
       .subscribe(
         (data: any) => {
-          this.isError = !data.body;
-          if (data.body) {
-            localStorage.setItem('token', data.body);
+          this.isError = !data.token;
+          if (data.token) {
+            localStorage.setItem('token', data.token);
             this.router.navigate(['/profile']);
             console.log('success');
           } else {
@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           this.isError = true;
           console.log(error);
           this.wrongError.emit(this.isWrongError);
+          return throwError(error);
         }
       );
   }

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-3">
         <div class="row mt-5">
-          <img [src]="userData.photoUrl" alt = "User Photo">
+          <img class="profile-pic" [src]="userData.photoUrl" alt = "User Photo">
         </div>
         <div class="row mb-3 mt-5">
           <span><b>Name:&nbsp;</b></span>
@@ -20,7 +20,7 @@
         </div>
         <div class="row mb-3" *ngIf="userData.manager">
           <span><b>Manager:&nbsp;</b></span>
-          <span>{{userData.manager}}</span>
+          <span>{{userData.manager.firstName}} {{userData.manager.lastName}}</span>
         </div>
         <div class="row mb-3">
           <span><b>Location:&nbsp;</b></span>
@@ -35,7 +35,9 @@
           <span>{{userData.phone}}</span>
         </div>
       </div>
-      <div class="col-9"></div>
+      <div class="col-9">
+        <app-tree *ngIf="userData" [username]="username" [userData]="userData"></app-tree>
+      </div>
     </div>
   </div>
 </div>
