@@ -9,7 +9,6 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
   options = {
     headers: new HttpHeaders()
       .set('Content-Type', 'application/json'),
@@ -18,16 +17,15 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-
   public login(username, password): Observable<object> {
     return this.http.post(`${environment.apiUrl}users/signin`, {
       username,
       password
-    }, {...this.options}).pipe(
-      catchError(err => {
-        console.log(err);
-        return throwError(err);
-      })
-    );
+    }, {...this.options});
+  }
+
+  public logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }

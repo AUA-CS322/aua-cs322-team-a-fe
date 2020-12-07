@@ -24,12 +24,20 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/treant-js/Treant.css",
+              "node_modules/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/treant-js/vendor/jquery.easing.js",
+              "node_modules/treant-js/vendor/jquery.mousewheel.js",
+              "node_modules/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js",
+              "node_modules/treant-js/vendor/raphael.js",
+              "node_modules/treant-js/Treant.js"
             ]
           },
           "configurations": {

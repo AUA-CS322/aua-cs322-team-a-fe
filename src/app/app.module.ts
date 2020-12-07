@@ -9,12 +9,16 @@ import {ProfileComponent} from './profile/profile.component';
 import {HeaderComponent} from './header/header.component';
 import {AuthInterceptor} from './auth.interceptor';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { TreeComponent } from './tree/tree.component';
+import {NgxTreantJsModule} from '@ahmed757/ngx-treant-js';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
+    HeaderComponent,
+    TreeComponent,
     HeaderComponent,
     SearchbarComponent
   ],
@@ -23,7 +27,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxTreantJsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

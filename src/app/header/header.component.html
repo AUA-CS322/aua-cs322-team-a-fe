@@ -3,4 +3,5 @@
         <img src="assets/images/aua-logo.png" class="logo" alt="">
     </a>
     <app-searchbar class="navbar-nav ml-auto searchbar" *ngIf="showSearch"></app-searchbar>
+    <button class="btn btn-light"  (click)="authService.logout()">Log Out</button>
 </nav>
