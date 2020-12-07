@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TreeComponent } from './tree.component';
+import {TreeComponent} from './tree.component';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from '../app-routing.module';
 
 describe('TreeComponent', () => {
   let component: TreeComponent;
@@ -8,9 +10,10 @@ describe('TreeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TreeComponent ]
+      declarations: [TreeComponent],
+      imports: [HttpClientModule, AppRoutingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

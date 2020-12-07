@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
           this.isError = true;
           console.log(error);
           this.wrongError.emit(this.isWrongError);
-          return throwError(error);
         }
       );
   }
