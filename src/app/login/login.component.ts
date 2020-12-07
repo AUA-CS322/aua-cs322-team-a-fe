@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.signForm.getRawValue().username, this.signForm.getRawValue().password)
       .subscribe(
         (data: any) => {
-          this.isError = !data.body;
-          if (data.body) {
+          console.log(data);
+          this.isError = !data.token;
+          if (data.token) {
             localStorage.setItem('token', data.body);
             this.router.navigate(['/profile']);
             console.log('success');

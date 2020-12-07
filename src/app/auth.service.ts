@@ -21,7 +21,7 @@ export class AuthService {
 
   public login(username, password): Observable<object> {
     return this.http.post(`${environment.apiUrl}users/signin`, {
-      name: username,
+      username,
       password
     }, {...this.options}).pipe(
       catchError(err => {

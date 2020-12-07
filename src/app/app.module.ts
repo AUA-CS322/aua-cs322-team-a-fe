@@ -8,13 +8,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
 import {HeaderComponent} from './header/header.component';
 import {AuthInterceptor} from './auth.interceptor';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
