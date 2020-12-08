@@ -20,7 +20,7 @@ describe('AuthService', () => {
 
   it('login should work', (done) => {
     service.login('president', 'pass').subscribe((value: any) => {
-      expect(value.body).toBeTruthy();
+      expect(value.token).toBeTruthy();
       done();
     });
   });
